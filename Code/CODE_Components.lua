@@ -354,17 +354,15 @@ end
 
 function REV_getPossibleContainers(unit)
 	local altContainers = {}
-	local squad
+	-- local squad
 
 	if unit then
 		table.insert(altContainers, unit)
 	end
 
-	if gv_SatelliteView and (squad or gv_CurrentSectorId) then
-		local sectorId = squad and squad.CurrentSector or gv_CurrentSectorId
-		if sectorId then
-			table.insert(altContainers, GetSectorInventory(sectorId))
-		end
+	if gv_SectorInventory and gv_SectorInventory.sector_id then
+		local sectorId = gv_SectorInventory.sector_id
+		table.insert(altContainers, GetSectorInventory(sectorId))
 	end
 
 	if unit and unit.Squad then
@@ -384,7 +382,7 @@ function REV_getPossibleContainers(unit)
 end
 
 function REV_placeComponents(items, unit)
-	unit = unit or SelectedObj
+	-- unit = unit or SelectedObj
 
 	local containers = REV_getPossibleContainers(unit)
 
@@ -415,7 +413,7 @@ function REV_placeComponents(items, unit)
 end
 
 function REV_placeComponent(item, unit)
-	unit = unit or item.owner and gv_UnitData[item.owner] or SelectedObj
+	unit = unit or item.owner and gv_UnitData[item.owner] -- or SelectedObj
 
 	local containers = REV_getPossibleContainers(unit)
 

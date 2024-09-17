@@ -2,11 +2,11 @@ return PlaceObj('ModDef', {
 	'title', "Revised Components",
 	'description', 'This mod makes it possible to remove and add components to your weapon via drag and drop or the weapon modification screen. It is the third mod in the "new" Revised Series which is based on Ablomis\' great mods and modding ideas.\n\nThis mod is not a component mod as it does not touch the components itself. It is not intended to change the components or make them more realistic. It is all about adding, removing, and buying components.\n\nThe main reason behind this decision is that this guarantees that other mod authors can easily add their components or reworked vanilla components. I will describe the steps necessary below.\n\nThere are compromises (which can also be dealt with sub-mods):\n\nBarrels are still using the default modification mode. The main reason is that there were only two barrel icons.\nI did not add InventoryItems for magazines as I recommend using Revised Mags mod to manage magazines\nSome weapons share components that should not be compatible. The reason is that shared icons will lead to shared components. (If you want to change that all you have to do is change the icons of the component)\n\n[b]Important[/b]\n[list]\n[*]Restart the game after activating the mod\n[*]Custom components from other mods won\'t work unless the mod added them as described below\n[*]If you are a mod creator and want to increase compatibility, please contact me\n[*]Plays nicely with the other Revised mods but they are not needed\n[*]There was some playtesting but there can still be bugs.\n[*]If you find bugs, please send me your bug reports.\n[/list]\n\n[b]Info for mod authors:[b]\nTo make your components show up you have to create WeaponComponentItems. \nThe ID must follow this pattern: WCI_[IconName], IconName is the last part of the Icons path.\nThe good thing is that those WeaponComponentItems don\'t have to be configured as they are getting their information from the component itself (Name, Description, Icon). There is also an automatic price calculation for BobbyRays and other calculated properties.',
 	'image', "Mod/rCD6ERe/Images/JA3Revised-components.png",
-	'last_changes', "Test steam upload",
+	'last_changes', "Fixed an error where a component could end up in a different sector",
 	'id', "rCD6ERe",
 	'author', "permanent666",
-	'version_minor', 4,
-	'version', 607,
+	'version_minor', 5,
+	'version', 608,
 	'lua_revision', 233360,
 	'saved_with_revision', 350233,
 	'code', {
@@ -97,8 +97,8 @@ return PlaceObj('ModDef', {
 	},
 	'default_options', {},
 	'has_data', true,
-	'saved', 1713019489,
-	'code_hash', -8248454424679318996,
+	'saved', 1726601070,
+	'code_hash', 3864558049930383608,
 	'affected_resources', {
 		PlaceObj('ModResourcePreset', {
 			'Class', "LootDef",
